@@ -9,5 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "ui5-middleware-livereload": "^3.4.0",
+    "ui5-middleware-serveframework": "^3.8.2"
+  }
 }
