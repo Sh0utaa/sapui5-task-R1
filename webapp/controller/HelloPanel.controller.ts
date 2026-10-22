@@ -26,4 +26,8 @@ export default class HelloPanel extends Controller {
             }) as Dialog;
         this.dialog.open();
     }
+
+    onCloseDialog(): void {
+        (this.byId("helloDialog") as Dialog)?.close();
+    }
 }
