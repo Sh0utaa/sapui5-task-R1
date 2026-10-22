@@ -4,23 +4,10 @@ import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
+/**
+ * @namespace ui5.tutorial.walkthrough.controller
+ */
 export default class AppController extends Controller {
-    onInit(): void {
-        const data = {
-            recipient: {
-                name: "EPAM"
-            }
-        }
-
-        const dataModel = new JSONModel(data);
-        this.getView()?.setModel(dataModel);
-
-        const i18nModel = new ResourceModel({
-            bundleName: "ui5.tutorial.walkthrough.i18n.i18n"
-        });
-        this.getView()?.setModel(i18nModel, "i18n");
-    }
-
     onShowHello(): void {
         const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
         const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
