@@ -15,7 +15,7 @@ export default class Component extends UIComponent {
 
 		const data = {
 			recipient: {
-				name: "World"
+				name: "EPAM!"
 			}
 		};
 		this.setModel(new JSONModel(data));
