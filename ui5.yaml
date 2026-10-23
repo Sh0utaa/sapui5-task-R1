@@ -11,11 +11,19 @@ framework:
     - name: themelib_sap_horizon
 builder:
   customTasks:
-    - name: ui5-tooling-transpile-task
-      afterTask: replaceVersion
+  - name: ui5-tooling-transpile-task
+    afterTask: replaceVersion
+    configuration: 
+      transformAsyncToPromise: true
 server:
   customMiddleware:
-    - name: ui5-tooling-transpile-middleware
-      afterMiddleware: compression
-    - name: ui5-middleware-livereload
-      afterMiddleware: compression
+  - name: ui5-tooling-transpile-middleware
+    afterMiddleware: compression
+    configuration: 
+      transformAsyncToPromise: true  
+  - name: ui5-middleware-simpleproxy
+    afterMiddleware: compression
+    mountPath: /V2
+    configuration:
+      baseUri: "https://services.odata.org"
+    
