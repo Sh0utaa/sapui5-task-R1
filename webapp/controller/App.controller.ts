@@ -1,12 +1,11 @@
-import ResourceBundle from "sap/base/i18n/ResourceBundle";
-import MessageToast from "sap/m/MessageToast";
 import Controller from "sap/ui/core/mvc/Controller";
-import JSONModel from "sap/ui/model/json/JSONModel";
-import ResourceModel from "sap/ui/model/resource/ResourceModel";
+import Component from "../Component";
 
 /**
  * @namespace ui5.tutorial.walkthrough.controller
  */
-export default class AppController extends Controller {
-
+export default class App extends Controller {
+	onInit(): void {
+      this.getView()?.addStyleClass((this.getOwnerComponent() as Component).getContentDensityClass() as string);
+    }
 };

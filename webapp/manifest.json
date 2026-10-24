@@ -28,6 +28,10 @@
     }
   },
   "sap.ui5": {
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
     "rootView": {
       "viewName": "ui5.tutorial.walkthrough.view.App",
       "type": "XML",

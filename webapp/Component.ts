@@ -27,4 +27,8 @@ export default class Component extends UIComponent {
 
 		this.getRouter().initialize();
 	};
+
+	getContentDensityClass(): string {
+		return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
+	}
 };
