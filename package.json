@@ -13,6 +13,7 @@
   "devDependencies": {
     "@openui5/types": "^1.153.0",
     "@types/node": "^26.6.5",
+    "@types/qunit": "^2.19.14",
     "typescript": "^7.0.2",
     "ui5-middleware-livereload": "^3.4.0",
     "ui5-middleware-serveframework": "^3.8.2",
