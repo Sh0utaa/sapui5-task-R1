@@ -9,6 +9,7 @@ import ObjectListItem from "sap/m/ObjectListItem";
 import UIComponent from "sap/ui/core/UIComponent";
 import Context from "sap/ui/model/Context";
 import formatter from "../model/formatter";
+import { Select$ChangeEvent } from "sap/m/Select";
 
 /**
  * @namespace ui5.tutorial.walkthrough.controller
@@ -42,4 +43,17 @@ export default class InvioceList extends Controller {
 			invoicePath: window.encodeURIComponent(((item.getBindingContext("invoice") as Context).getPath() as string).substring(1))
 		});
 	} 
+
+	onFilterSelect(event: Select$ChangeEvent): void {
+		const key = event.getParameter("selectedItem")?.getKey();
+		const filters: Filter[] = [];
+
+		if (key && key !== "all") {
+			filters.push(new Filter("Status", FilterOperator.EQ, key));
+		}
+
+		const list = this.byId("invoiceList");
+		const binding = list?.getBinding("items") as ListBinding;
+		binding?.filter(filters);
+	}
 };
