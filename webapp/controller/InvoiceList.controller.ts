@@ -8,11 +8,13 @@ import Event from "sap/ui/base/Event";
 import ObjectListItem from "sap/m/ObjectListItem";
 import UIComponent from "sap/ui/core/UIComponent";
 import Context from "sap/ui/model/Context";
+import formatter from "../model/formatter";
 
 /**
  * @namespace ui5.tutorial.walkthrough.controller
  */
-export default class App extends Controller {
+export default class InvioceList extends Controller {
+	formatter = formatter;
 	
 	onInit(): void {
 		const viewModel = new JSONModel({
